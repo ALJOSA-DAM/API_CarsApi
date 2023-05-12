@@ -21,13 +21,11 @@ import java.util.Map;
 
 @RestController
 public class OficinaController {
+
     private final Logger logger = LoggerFactory.getLogger(OficinaController.class);
 
     @Autowired
     private OficinaService oficinaService;
-    @Autowired
-    private CiudadService ciudadService;
-
 
     @GetMapping("/oficinas")
     public List<Oficina> getOficina(@RequestParam(name = "ciudad-oficina", required = false, defaultValue = "")

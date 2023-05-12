@@ -13,9 +13,13 @@ import java.util.List;
 public interface AlquilerService {
 
     List<Alquiler> listar();
+
     Alquiler buscarPorId(long id) throws AlquilerNotFoundException;
+
     Alquiler addRent(AlquilerDTO alquilerDTO) throws CocheNotFoundException, UsuarioNotFoundException;
+
     Alquiler eliminarAlquiler(long id) throws AlquilerNotFoundException;
-    Alquiler modificarAlquiler(long id, Alquiler alquiler)throws AlquilerNotFoundException;
+
+    Alquiler modificarAlquiler(long id, Alquiler alquiler) throws AlquilerNotFoundException;
 
 }

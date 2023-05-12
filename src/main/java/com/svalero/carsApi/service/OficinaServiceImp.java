@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class OficinaServiceImp implements OficinaService{
+public class OficinaServiceImp implements OficinaService {
     private final Logger logger = LoggerFactory.getLogger(OficinaServiceImp.class);
 
     @Autowired
@@ -24,7 +24,7 @@ public class OficinaServiceImp implements OficinaService{
     private CiudadRepository ciudadRepository;
 
     @Override
-    public List<Oficina> listar()throws OficinaNotFoundException {
+    public List<Oficina> listar() throws OficinaNotFoundException {
         return oficinaRepository.findAll();
     }
 
@@ -32,12 +32,10 @@ public class OficinaServiceImp implements OficinaService{
     public Oficina buscarPorId(long id) throws OficinaNotFoundException {
         return oficinaRepository.findById(id)
                 .orElseThrow(OficinaNotFoundException::new);
-
     }
 
     @Override
     public List<Oficina> listarPorCiudad(int ciudadId) {
-
         return oficinaRepository.findByCiudadId(ciudadId);
     }
 
@@ -50,12 +48,12 @@ public class OficinaServiceImp implements OficinaService{
         oficina.setCiudad(ciudadRepository.findById(oficinaDTO.getCiudad())
                 .orElseThrow(CiudadNotFoundException::new));
 
-         oficinaRepository.save(oficina);
+        oficinaRepository.save(oficina);
         return oficina;
     }
 
     @Override
-    public Oficina eliminarOficina(long id) throws OficinaNotFoundException{
+    public Oficina eliminarOficina(long id) throws OficinaNotFoundException {
         Oficina oficina = oficinaRepository.findByid(id);
         oficinaRepository.delete(oficina);
 
@@ -63,14 +61,12 @@ public class OficinaServiceImp implements OficinaService{
     }
 
     @Override
-    public Oficina modificarOficina(long id, Oficina newOficina) throws OficinaNotFoundException{
+    public Oficina modificarOficina(long id, Oficina newOficina) throws OficinaNotFoundException {
         Oficina oficina = oficinaRepository.findByid(id);
         oficina.setDireccion(newOficina.getDireccion());
         oficina.setTelefono(newOficina.getTelefono());
         oficina.setCiudad(newOficina.getCiudad());
         return null;
     }
-
-
 
 }

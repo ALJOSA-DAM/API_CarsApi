@@ -15,6 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity(name = "Ciudad")
 public class Ciudad {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

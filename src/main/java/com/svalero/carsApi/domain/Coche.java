@@ -13,27 +13,26 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Entity (name = "coche")
+@Entity(name = "coche")
 public class Coche {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column
-    @NotBlank (message = "No puede quedar en blanco")
-    @NotNull (message = "El dato introducido es nulo")
+    @NotBlank(message = "No puede quedar en blanco")
+    @NotNull(message = "El dato introducido es nulo")
     private String marca;
     @Column
-    @NotBlank (message = "No puede quedar en blanco")
-    @NotNull (message = "El dato introducido es nulo")
+    @NotBlank(message = "No puede quedar en blanco")
+    @NotNull(message = "El dato introducido es nulo")
     private String modelo;
     @Column
-    @NotBlank (message = "No puede quedar en blanco")
-    @NotNull (message = "El dato introducido es nulo")
+    @NotBlank(message = "No puede quedar en blanco")
+    @NotNull(message = "El dato introducido es nulo")
     private String matricula;
     @Column
     private boolean disponible;
-
     @OneToMany(mappedBy = "coche")
     @JsonBackReference(value = "coche-alquiler")
     private List<Alquiler> alquileres;

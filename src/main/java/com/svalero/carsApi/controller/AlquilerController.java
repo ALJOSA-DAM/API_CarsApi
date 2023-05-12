@@ -1,14 +1,12 @@
 package com.svalero.carsApi.controller;
 
+import com.svalero.carsApi.domain.Alquiler;
 import com.svalero.carsApi.domain.dto.AlquilerDTO;
 import com.svalero.carsApi.exception.AlquilerNotFoundException;
 import com.svalero.carsApi.exception.CocheNotFoundException;
 import com.svalero.carsApi.exception.MensajeError;
 import com.svalero.carsApi.exception.UsuarioNotFoundException;
-import com.svalero.carsApi.repository.CocheRepository;
-import com.svalero.carsApi.repository.UsuarioRepository;
 import com.svalero.carsApi.service.AlquilerService;
-import com.svalero.carsApi.domain.Alquiler;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +20,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 
 @RestController
 public class AlquilerController {
@@ -66,7 +63,6 @@ public class AlquilerController {
         Alquiler newAlquiler = alquilerService.modificarAlquiler(id, alquiler);
         logger.info("modificar un alquiler");
         return newAlquiler;
-
     }
 
     @ExceptionHandler(AlquilerNotFoundException.class)
