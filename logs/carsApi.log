@@ -1,0 +1,696 @@
+2023-05-12 12:07:11,838 DEBUG o.j.l.LoggerProviders [background-preinit] Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2023-05-12 12:07:11,912 INFO o.s.b.StartupInfoLogger [main] Starting CarsApiApplication using Java 17.0.7 with PID 12468 (C:\Users\santi\Desktop\Prácticas 2º Cuatrimestre\API\CarsApi-develop\target\classes started by santi in C:\Users\santi\Desktop\Prácticas 2º Cuatrimestre\API\CarsApi-develop)
+2023-05-12 12:07:11,912 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.0.1, Spring v6.0.3
+2023-05-12 12:07:11,912 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-05-12 12:07:14,695 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-12 12:07:14,695 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2023-05-12 12:07:14,695 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-05-12 12:07:14,858 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-05-12 12:07:14,959 DEBUG c.z.h.HikariConfig [main] Driver class com.mysql.cj.jdbc.Driver found in Thread context class loader jdk.internal.loader.ClassLoaders$AppClassLoader@73d16e93
+2023-05-12 12:07:15,543 WARN o.h.b.i.MetadataBuilderImpl$MetadataBuildingOptionsImpl [main] HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-05-12 12:07:15,781 DEBUG c.z.h.HikariConfig [main] HikariPool-1 - configuration:
+2023-05-12 12:07:15,781 DEBUG c.z.h.HikariConfig [main] allowPoolSuspension.............false
+2023-05-12 12:07:15,781 DEBUG c.z.h.HikariConfig [main] autoCommit......................true
+2023-05-12 12:07:15,781 DEBUG c.z.h.HikariConfig [main] catalog.........................none
+2023-05-12 12:07:15,781 DEBUG c.z.h.HikariConfig [main] connectionInitSql...............none
+2023-05-12 12:07:15,781 DEBUG c.z.h.HikariConfig [main] connectionTestQuery.............none
+2023-05-12 12:07:15,781 DEBUG c.z.h.HikariConfig [main] connectionTimeout...............30000
+2023-05-12 12:07:15,781 DEBUG c.z.h.HikariConfig [main] dataSource......................none
+2023-05-12 12:07:15,781 DEBUG c.z.h.HikariConfig [main] dataSourceClassName.............none
+2023-05-12 12:07:15,781 DEBUG c.z.h.HikariConfig [main] dataSourceJNDI..................none
+2023-05-12 12:07:15,797 DEBUG c.z.h.HikariConfig [main] dataSourceProperties............{password=<masked>}
+2023-05-12 12:07:15,797 DEBUG c.z.h.HikariConfig [main] driverClassName................."com.mysql.cj.jdbc.Driver"
+2023-05-12 12:07:15,797 DEBUG c.z.h.HikariConfig [main] exceptionOverrideClassName......none
+2023-05-12 12:07:15,797 DEBUG c.z.h.HikariConfig [main] healthCheckProperties...........{}
+2023-05-12 12:07:15,797 DEBUG c.z.h.HikariConfig [main] healthCheckRegistry.............none
+2023-05-12 12:07:15,797 DEBUG c.z.h.HikariConfig [main] idleTimeout.....................600000
+2023-05-12 12:07:15,797 DEBUG c.z.h.HikariConfig [main] initializationFailTimeout.......1
+2023-05-12 12:07:15,797 DEBUG c.z.h.HikariConfig [main] isolateInternalQueries..........false
+2023-05-12 12:07:15,797 DEBUG c.z.h.HikariConfig [main] jdbcUrl.........................jdbc:mysql://localhost:3306/carsapidb
+2023-05-12 12:07:15,797 DEBUG c.z.h.HikariConfig [main] keepaliveTime...................0
+2023-05-12 12:07:15,797 DEBUG c.z.h.HikariConfig [main] leakDetectionThreshold..........0
+2023-05-12 12:07:15,797 DEBUG c.z.h.HikariConfig [main] maxLifetime.....................1800000
+2023-05-12 12:07:15,797 DEBUG c.z.h.HikariConfig [main] maximumPoolSize.................10
+2023-05-12 12:07:15,797 DEBUG c.z.h.HikariConfig [main] metricRegistry..................none
+2023-05-12 12:07:15,797 DEBUG c.z.h.HikariConfig [main] metricsTrackerFactory...........none
+2023-05-12 12:07:15,797 DEBUG c.z.h.HikariConfig [main] minimumIdle.....................10
+2023-05-12 12:07:15,797 DEBUG c.z.h.HikariConfig [main] password........................<masked>
+2023-05-12 12:07:15,797 DEBUG c.z.h.HikariConfig [main] poolName........................"HikariPool-1"
+2023-05-12 12:07:15,797 DEBUG c.z.h.HikariConfig [main] readOnly........................false
+2023-05-12 12:07:15,797 DEBUG c.z.h.HikariConfig [main] registerMbeans..................false
+2023-05-12 12:07:15,797 DEBUG c.z.h.HikariConfig [main] scheduledExecutor...............none
+2023-05-12 12:07:15,813 DEBUG c.z.h.HikariConfig [main] schema..........................none
+2023-05-12 12:07:15,813 DEBUG c.z.h.HikariConfig [main] threadFactory...................internal
+2023-05-12 12:07:15,813 DEBUG c.z.h.HikariConfig [main] transactionIsolation............default
+2023-05-12 12:07:15,813 DEBUG c.z.h.HikariConfig [main] username........................"root"
+2023-05-12 12:07:15,813 DEBUG c.z.h.HikariConfig [main] validationTimeout...............5000
+2023-05-12 12:07:15,813 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-05-12 12:07:16,129 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@112c2930
+2023-05-12 12:07:16,129 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-05-12 12:07:16,245 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=1, active=1, idle=0, waiting=0)
+2023-05-12 12:07:16,245 INFO o.h.e.j.d.i.DialectFactoryImpl [main] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-05-12 12:07:16,245 DEBUG c.z.h.p.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@a82c27
+2023-05-12 12:07:16,267 DEBUG c.z.h.p.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4195261c
+2023-05-12 12:07:16,283 DEBUG c.z.h.p.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@701e05a6
+2023-05-12 12:07:16,301 DEBUG c.z.h.p.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@21bad953
+2023-05-12 12:07:16,320 DEBUG c.z.h.p.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@266dcaed
+2023-05-12 12:07:16,338 DEBUG c.z.h.p.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@25f48450
+2023-05-12 12:07:16,353 DEBUG c.z.h.p.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@73dee23c
+2023-05-12 12:07:16,374 DEBUG c.z.h.p.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2fc7e0df
+2023-05-12 12:07:16,398 DEBUG c.z.h.p.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@104fa4c6
+2023-05-12 12:07:16,429 DEBUG c.z.h.p.HikariPool [HikariPool-1 connection adder] HikariPool-1 - After adding stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:07:18,518 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-12 12:07:18,819 DEBUG o.s.w.s.h.AbstractHandlerMethodMapping [main] 
+	c.s.c.c.AlquilerController:
+	{GET [/alquileres]}: getAlquiler()
+	{GET [/alquiler/{id}]}: getAlquiler(long)
+	{POST [/alquiler]}: addRent(AlquilerDTO)
+	{PUT [/alquileres/{id}]}: modificarAlquiler(long,Alquiler)
+	{DELETE [/alquileres/{id}]}: eliminarAlquiler(long)
+2023-05-12 12:07:18,819 DEBUG o.s.w.s.h.AbstractHandlerMethodMapping [main] 
+	c.s.c.c.CiudadController:
+	{DELETE [/ciudades/{id}]}: eliminarCiudad(long)
+	{PUT [/ciudades/{id}]}: modificarCiudad(long,Ciudad)
+	{POST [/ciudades]}: añadirCiudad(Ciudad)
+	{GET [/ciudad/{id}]}: getCiudad(long)
+	{GET [/ciudades]}: getCiudades()
+2023-05-12 12:07:18,834 DEBUG o.s.w.s.h.AbstractHandlerMethodMapping [main] 
+	c.s.c.c.CocheController:
+	{GET [/coches]}: getCoches()
+	{GET [/coche/{id}]}: getCoche(long)
+	{POST [/coches]}: añadirCoche(Coche)
+	{DELETE [/coches/{id}]}: eliminarCoche(long)
+	{PUT [/coches/{id}]}: modificarCoche(long,Coche)
+2023-05-12 12:07:18,834 DEBUG o.s.w.s.h.AbstractHandlerMethodMapping [main] 
+	c.s.c.c.OficinaController:
+	{GET [/oficinas]}: getOficina(String)
+	{GET [/oficina/{id}]}: getOficina(long)
+	{PUT [/oficinas/{id}]}: modificarOficina(long,Oficina)
+	{DELETE [/oficinas/{id}]}: eliminarOficina(long)
+	{POST [/oficina]}: addOffice(OficinaDTO)
+2023-05-12 12:07:18,834 DEBUG o.s.w.s.h.AbstractHandlerMethodMapping [main] 
+	c.s.c.c.UsuarioController:
+	{PUT [/usuarios/{id}]}: modificarUsuario(long,Usuario)
+	{GET [/usuario/{id}]}: getUsuario(long)
+	{GET [/usuario/dni/{dni}]}: getUsuarioByDni(String)
+	{GET [/usuarios]}: getUsuarios()
+	{POST [/usuarios]}: añadirUsuario(Usuario)
+	{DELETE [/usuarios/{id}]}: eliminarUsuario(long)
+2023-05-12 12:07:18,834 DEBUG o.s.w.s.h.AbstractHandlerMethodMapping [main] 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2023-05-12 12:07:18,866 DEBUG o.s.w.s.h.AbstractDetectingUrlHandlerMapping [main] 'beanNameHandlerMapping' {}
+2023-05-12 12:07:18,888 DEBUG o.s.w.s.h.SimpleUrlHandlerMapping [main] 'resourceHandlerMapping' {/webjars/**=ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]], /**=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]}
+2023-05-12 12:07:19,151 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2023-05-12 12:07:19,204 INFO o.s.b.StartupInfoLogger [main] Started CarsApiApplication in 8.083 seconds (process running for 10.236)
+2023-05-12 12:07:46,261 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:07:46,261 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:08:16,287 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:08:16,287 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:08:46,301 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:08:46,301 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:09:16,307 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:09:16,307 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:09:46,309 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:09:46,309 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:10:04,471 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-12 12:10:04,641 INFO c.s.c.c.UsuarioController [http-nio-8080-exec-1] buscar usuario por id
+2023-05-12 12:10:16,322 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:10:16,322 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:10:46,341 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:10:46,344 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:11:16,353 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:11:16,354 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:11:28,428 INFO c.s.c.c.AlquilerController [http-nio-8080-exec-5] Obtener lista de alquileres registrados
+2023-05-12 12:11:46,506 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:11:46,506 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:12:16,524 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:12:16,524 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:12:46,536 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:12:46,536 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:13:16,551 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:13:16,551 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:13:46,560 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:13:46,560 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:14:16,561 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:14:16,561 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:14:46,579 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:14:46,579 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:15:16,595 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:15:16,595 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:15:46,605 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:15:46,605 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:16:16,621 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:16:16,621 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:16:46,625 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:16:46,625 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:17:16,646 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:17:16,648 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:17:46,664 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:17:46,664 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:18:16,681 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:18:16,681 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:18:46,696 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:18:46,696 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:19:16,707 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:19:16,707 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:19:46,719 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:19:46,719 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:20:16,735 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:20:16,735 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:20:46,753 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:20:46,753 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:21:16,768 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:21:16,777 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:21:46,804 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:21:46,804 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:22:16,810 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:22:16,810 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:22:46,825 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:22:46,825 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:23:16,829 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:23:16,829 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:23:46,833 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:23:46,833 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:24:30,379 DEBUG o.j.l.LoggerProviders [background-preinit] Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2023-05-12 12:24:30,499 INFO o.s.b.StartupInfoLogger [main] Starting CarsApiApplication using Java 17.0.7 with PID 3996 (C:\Users\santi\Desktop\Prácticas 2º Cuatrimestre\API\CarsApi-develop\target\classes started by santi in C:\Users\santi\Desktop\Prácticas 2º Cuatrimestre\API\CarsApi-develop)
+2023-05-12 12:24:30,499 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.0.1, Spring v6.0.3
+2023-05-12 12:24:30,499 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-05-12 12:24:32,734 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-12 12:24:32,750 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2023-05-12 12:24:32,750 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-05-12 12:24:32,935 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-05-12 12:24:33,019 DEBUG c.z.h.HikariConfig [main] Driver class com.mysql.cj.jdbc.Driver found in Thread context class loader jdk.internal.loader.ClassLoaders$AppClassLoader@2a139a55
+2023-05-12 12:24:33,636 WARN o.h.b.i.MetadataBuilderImpl$MetadataBuildingOptionsImpl [main] HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-05-12 12:24:33,838 DEBUG c.z.h.HikariConfig [main] HikariPool-1 - configuration:
+2023-05-12 12:24:33,838 DEBUG c.z.h.HikariConfig [main] allowPoolSuspension.............false
+2023-05-12 12:24:33,838 DEBUG c.z.h.HikariConfig [main] autoCommit......................true
+2023-05-12 12:24:33,854 DEBUG c.z.h.HikariConfig [main] catalog.........................none
+2023-05-12 12:24:33,854 DEBUG c.z.h.HikariConfig [main] connectionInitSql...............none
+2023-05-12 12:24:33,854 DEBUG c.z.h.HikariConfig [main] connectionTestQuery.............none
+2023-05-12 12:24:33,854 DEBUG c.z.h.HikariConfig [main] connectionTimeout...............30000
+2023-05-12 12:24:33,854 DEBUG c.z.h.HikariConfig [main] dataSource......................none
+2023-05-12 12:24:33,854 DEBUG c.z.h.HikariConfig [main] dataSourceClassName.............none
+2023-05-12 12:24:33,854 DEBUG c.z.h.HikariConfig [main] dataSourceJNDI..................none
+2023-05-12 12:24:33,859 DEBUG c.z.h.HikariConfig [main] dataSourceProperties............{password=<masked>}
+2023-05-12 12:24:33,859 DEBUG c.z.h.HikariConfig [main] driverClassName................."com.mysql.cj.jdbc.Driver"
+2023-05-12 12:24:33,859 DEBUG c.z.h.HikariConfig [main] exceptionOverrideClassName......none
+2023-05-12 12:24:33,859 DEBUG c.z.h.HikariConfig [main] healthCheckProperties...........{}
+2023-05-12 12:24:33,859 DEBUG c.z.h.HikariConfig [main] healthCheckRegistry.............none
+2023-05-12 12:24:33,859 DEBUG c.z.h.HikariConfig [main] idleTimeout.....................600000
+2023-05-12 12:24:33,859 DEBUG c.z.h.HikariConfig [main] initializationFailTimeout.......1
+2023-05-12 12:24:33,859 DEBUG c.z.h.HikariConfig [main] isolateInternalQueries..........false
+2023-05-12 12:24:33,859 DEBUG c.z.h.HikariConfig [main] jdbcUrl.........................jdbc:mysql://localhost:3306/carsapidb
+2023-05-12 12:24:33,859 DEBUG c.z.h.HikariConfig [main] keepaliveTime...................0
+2023-05-12 12:24:33,859 DEBUG c.z.h.HikariConfig [main] leakDetectionThreshold..........0
+2023-05-12 12:24:33,859 DEBUG c.z.h.HikariConfig [main] maxLifetime.....................1800000
+2023-05-12 12:24:33,859 DEBUG c.z.h.HikariConfig [main] maximumPoolSize.................10
+2023-05-12 12:24:33,859 DEBUG c.z.h.HikariConfig [main] metricRegistry..................none
+2023-05-12 12:24:33,859 DEBUG c.z.h.HikariConfig [main] metricsTrackerFactory...........none
+2023-05-12 12:24:33,859 DEBUG c.z.h.HikariConfig [main] minimumIdle.....................10
+2023-05-12 12:24:33,859 DEBUG c.z.h.HikariConfig [main] password........................<masked>
+2023-05-12 12:24:33,859 DEBUG c.z.h.HikariConfig [main] poolName........................"HikariPool-1"
+2023-05-12 12:24:33,859 DEBUG c.z.h.HikariConfig [main] readOnly........................false
+2023-05-12 12:24:33,859 DEBUG c.z.h.HikariConfig [main] registerMbeans..................false
+2023-05-12 12:24:33,859 DEBUG c.z.h.HikariConfig [main] scheduledExecutor...............none
+2023-05-12 12:24:33,859 DEBUG c.z.h.HikariConfig [main] schema..........................none
+2023-05-12 12:24:33,859 DEBUG c.z.h.HikariConfig [main] threadFactory...................internal
+2023-05-12 12:24:33,859 DEBUG c.z.h.HikariConfig [main] transactionIsolation............default
+2023-05-12 12:24:33,859 DEBUG c.z.h.HikariConfig [main] username........................"root"
+2023-05-12 12:24:33,875 DEBUG c.z.h.HikariConfig [main] validationTimeout...............5000
+2023-05-12 12:24:33,875 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-05-12 12:24:34,160 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@da09250
+2023-05-12 12:24:34,160 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-05-12 12:24:34,238 INFO o.h.e.j.d.i.DialectFactoryImpl [main] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-05-12 12:24:34,276 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=1, active=0, idle=1, waiting=0)
+2023-05-12 12:24:34,276 DEBUG c.z.h.p.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6139736
+2023-05-12 12:24:34,297 DEBUG c.z.h.p.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@472e9d0d
+2023-05-12 12:24:34,315 DEBUG c.z.h.p.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@76a31baf
+2023-05-12 12:24:34,334 DEBUG c.z.h.p.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@27016242
+2023-05-12 12:24:34,352 DEBUG c.z.h.p.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@392bd0ce
+2023-05-12 12:24:34,376 DEBUG c.z.h.p.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@234f39e2
+2023-05-12 12:24:34,413 DEBUG c.z.h.p.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1ae6765f
+2023-05-12 12:24:34,438 DEBUG c.z.h.p.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2dda42d8
+2023-05-12 12:24:34,460 DEBUG c.z.h.p.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@22814391
+2023-05-12 12:24:34,476 DEBUG c.z.h.p.HikariPool [HikariPool-1 connection adder] HikariPool-1 - After adding stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:24:36,481 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-12 12:24:36,782 DEBUG o.s.w.s.h.AbstractHandlerMethodMapping [main] 
+	c.s.c.c.AlquilerController:
+	{POST [/alquiler]}: addRent(AlquilerDTO)
+	{DELETE [/alquileres/{id}]}: eliminarAlquiler(long)
+	{PUT [/alquileres/{id}]}: modificarAlquiler(long,Alquiler)
+	{GET [/alquileres]}: getAlquiler()
+	{GET [/alquiler/{id}]}: getAlquiler(long)
+2023-05-12 12:24:36,782 DEBUG o.s.w.s.h.AbstractHandlerMethodMapping [main] 
+	c.s.c.c.CiudadController:
+	{DELETE [/ciudades/{id}]}: eliminarCiudad(long)
+	{POST [/ciudades]}: añadirCiudad(Ciudad)
+	{GET [/ciudades]}: getCiudades()
+	{PUT [/ciudades/{id}]}: modificarCiudad(long,Ciudad)
+	{GET [/ciudad/{id}]}: getCiudad(long)
+2023-05-12 12:24:36,782 DEBUG o.s.w.s.h.AbstractHandlerMethodMapping [main] 
+	c.s.c.c.CocheController:
+	{POST [/coches]}: añadirCoche(Coche)
+	{PUT [/coches/{id}]}: modificarCoche(long,Coche)
+	{GET [/coches]}: getCoches()
+	{DELETE [/coches/{id}]}: eliminarCoche(long)
+	{GET [/coche/{id}]}: getCoche(long)
+2023-05-12 12:24:36,798 DEBUG o.s.w.s.h.AbstractHandlerMethodMapping [main] 
+	c.s.c.c.OficinaController:
+	{POST [/oficina]}: addOffice(OficinaDTO)
+	{GET [/oficinas]}: getOficina(String)
+	{GET [/oficina/{id}]}: getOficina(long)
+	{DELETE [/oficinas/{id}]}: eliminarOficina(long)
+	{PUT [/oficinas/{id}]}: modificarOficina(long,Oficina)
+2023-05-12 12:24:36,798 DEBUG o.s.w.s.h.AbstractHandlerMethodMapping [main] 
+	c.s.c.c.UsuarioController:
+	{PUT [/usuarios/{id}]}: modificarUsuario(long,Usuario)
+	{GET [/usuario/{id}]}: getUsuario(long)
+	{POST [/usuarios]}: añadirUsuario(Usuario)
+	{DELETE [/usuarios/{id}]}: eliminarUsuario(long)
+	{GET [/usuarios]}: getUsuarios()
+	{GET [/usuario/dni/{dni}]}: getUsuarioByDni(String)
+2023-05-12 12:24:36,814 DEBUG o.s.w.s.h.AbstractHandlerMethodMapping [main] 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2023-05-12 12:24:36,829 DEBUG o.s.w.s.h.AbstractDetectingUrlHandlerMapping [main] 'beanNameHandlerMapping' {}
+2023-05-12 12:24:36,866 DEBUG o.s.w.s.h.SimpleUrlHandlerMapping [main] 'resourceHandlerMapping' {/webjars/**=ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]], /**=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]}
+2023-05-12 12:24:37,103 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2023-05-12 12:24:37,134 INFO o.s.b.StartupInfoLogger [main] Started CarsApiApplication in 7.343 seconds (process running for 8.791)
+2023-05-12 12:24:45,696 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-12 12:24:45,761 INFO c.s.c.c.AlquilerController [http-nio-8080-exec-1] Obtener lista de alquileres registrados
+2023-05-12 12:25:04,290 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:25:04,290 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:25:34,306 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:25:34,306 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:26:04,310 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:26:04,311 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:26:34,321 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:26:34,321 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:27:04,334 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:27:04,335 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:27:06,822 ERROR c.s.c.c.AlquilerController [http-nio-8080-exec-5] JSON parse error: Cannot deserialize value of type `java.time.LocalDate` from String "09-10-2021": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '09-10-2021' could not be parsed at index 0
+org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.time.LocalDate` from String "09-10-2021": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '09-10-2021' could not be parsed at index 0
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:406)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:354)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:182)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:163)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:136)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:181)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:148)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1080)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:973)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1010)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:913)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:884)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.time.LocalDate` from String "09-10-2021": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '09-10-2021' could not be parsed at index 0
+ at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 2, column: 21] (through reference chain: com.svalero.carsApi.domain.dto.AlquilerDTO["fechaInicio"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1996)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1224)
+	at com.fasterxml.jackson.datatype.jsr310.deser.JSR310DeserializerBase._handleDateTimeException(JSR310DeserializerBase.java:176)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer._fromString(LocalDateDeserializer.java:179)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer.deserialize(LocalDateDeserializer.java:92)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer.deserialize(LocalDateDeserializer.java:38)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:392)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:185)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:323)
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2105)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1481)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:395)
+	... 51 common frames omitted
+Caused by: java.time.format.DateTimeParseException: Text '09-10-2021' could not be parsed at index 0
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954)
+	at java.base/java.time.LocalDate.parse(LocalDate.java:430)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer._fromString(LocalDateDeserializer.java:177)
+	... 60 common frames omitted
+2023-05-12 12:27:34,351 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:27:34,351 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:28:04,362 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:28:04,364 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:28:34,374 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:28:34,376 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:29:04,383 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:29:04,383 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:29:34,397 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:29:34,401 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:29:59,659 ERROR c.s.c.c.AlquilerController [http-nio-8080-exec-6] JSON parse error: Cannot deserialize value of type `java.time.LocalDate` from String "09-10-2021": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '09-10-2021' could not be parsed at index 0
+org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.time.LocalDate` from String "09-10-2021": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '09-10-2021' could not be parsed at index 0
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:406)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:354)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:182)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:163)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:136)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:181)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:148)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1080)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:973)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1010)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:913)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:884)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.time.LocalDate` from String "09-10-2021": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '09-10-2021' could not be parsed at index 0
+ at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 3, column: 21] (through reference chain: com.svalero.carsApi.domain.dto.AlquilerDTO["fechaInicio"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1996)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1224)
+	at com.fasterxml.jackson.datatype.jsr310.deser.JSR310DeserializerBase._handleDateTimeException(JSR310DeserializerBase.java:176)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer._fromString(LocalDateDeserializer.java:179)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer.deserialize(LocalDateDeserializer.java:92)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer.deserialize(LocalDateDeserializer.java:38)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:392)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:185)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:323)
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2105)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1481)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:395)
+	... 51 common frames omitted
+Caused by: java.time.format.DateTimeParseException: Text '09-10-2021' could not be parsed at index 0
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954)
+	at java.base/java.time.LocalDate.parse(LocalDate.java:430)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer._fromString(LocalDateDeserializer.java:177)
+	... 60 common frames omitted
+2023-05-12 12:30:04,420 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:30:04,421 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:30:30,498 ERROR c.s.c.c.AlquilerController [http-nio-8080-exec-9] JSON parse error: Cannot deserialize value of type `java.time.LocalDate` from String "09-10-2021": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '09-10-2021' could not be parsed at index 0
+org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.time.LocalDate` from String "09-10-2021": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '09-10-2021' could not be parsed at index 0
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:406)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:354)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:182)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:163)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:136)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:181)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:148)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1080)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:973)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1010)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:913)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:884)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.time.LocalDate` from String "09-10-2021": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '09-10-2021' could not be parsed at index 0
+ at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 3, column: 21] (through reference chain: com.svalero.carsApi.domain.dto.AlquilerDTO["fechaInicio"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1996)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1224)
+	at com.fasterxml.jackson.datatype.jsr310.deser.JSR310DeserializerBase._handleDateTimeException(JSR310DeserializerBase.java:176)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer._fromString(LocalDateDeserializer.java:179)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer.deserialize(LocalDateDeserializer.java:92)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer.deserialize(LocalDateDeserializer.java:38)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:392)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:185)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:323)
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2105)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1481)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:395)
+	... 51 common frames omitted
+Caused by: java.time.format.DateTimeParseException: Text '09-10-2021' could not be parsed at index 0
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954)
+	at java.base/java.time.LocalDate.parse(LocalDate.java:430)
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer._fromString(LocalDateDeserializer.java:177)
+	... 60 common frames omitted
+2023-05-12 12:30:34,430 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:30:34,430 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:31:04,435 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:31:04,437 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:31:34,450 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:31:34,450 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:32:04,456 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:32:04,456 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:32:34,470 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:32:34,470 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:33:04,479 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:33:04,479 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:34:14,170 DEBUG o.j.l.LoggerProviders [background-preinit] Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2023-05-12 12:34:14,311 INFO o.s.b.StartupInfoLogger [main] Starting CarsApiApplication using Java 17.0.7 with PID 10920 (C:\Users\santi\Desktop\Prácticas 2º Cuatrimestre\API\CarsApi-develop\target\classes started by santi in C:\Users\santi\Desktop\Prácticas 2º Cuatrimestre\API\CarsApi-develop)
+2023-05-12 12:34:14,311 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.0.1, Spring v6.0.3
+2023-05-12 12:34:14,311 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-05-12 12:34:18,104 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-12 12:34:18,104 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2023-05-12 12:34:18,104 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-05-12 12:34:18,309 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-05-12 12:34:18,389 DEBUG c.z.h.HikariConfig [main] Driver class com.mysql.cj.jdbc.Driver found in Thread context class loader jdk.internal.loader.ClassLoaders$AppClassLoader@2a139a55
+2023-05-12 12:34:18,807 WARN o.h.b.i.MetadataBuilderImpl$MetadataBuildingOptionsImpl [main] HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-05-12 12:34:18,991 DEBUG c.z.h.HikariConfig [main] HikariPool-1 - configuration:
+2023-05-12 12:34:18,991 DEBUG c.z.h.HikariConfig [main] allowPoolSuspension.............false
+2023-05-12 12:34:18,991 DEBUG c.z.h.HikariConfig [main] autoCommit......................true
+2023-05-12 12:34:18,991 DEBUG c.z.h.HikariConfig [main] catalog.........................none
+2023-05-12 12:34:19,006 DEBUG c.z.h.HikariConfig [main] connectionInitSql...............none
+2023-05-12 12:34:19,006 DEBUG c.z.h.HikariConfig [main] connectionTestQuery.............none
+2023-05-12 12:34:19,006 DEBUG c.z.h.HikariConfig [main] connectionTimeout...............30000
+2023-05-12 12:34:19,006 DEBUG c.z.h.HikariConfig [main] dataSource......................none
+2023-05-12 12:34:19,006 DEBUG c.z.h.HikariConfig [main] dataSourceClassName.............none
+2023-05-12 12:34:19,006 DEBUG c.z.h.HikariConfig [main] dataSourceJNDI..................none
+2023-05-12 12:34:19,006 DEBUG c.z.h.HikariConfig [main] dataSourceProperties............{password=<masked>}
+2023-05-12 12:34:19,006 DEBUG c.z.h.HikariConfig [main] driverClassName................."com.mysql.cj.jdbc.Driver"
+2023-05-12 12:34:19,006 DEBUG c.z.h.HikariConfig [main] exceptionOverrideClassName......none
+2023-05-12 12:34:19,006 DEBUG c.z.h.HikariConfig [main] healthCheckProperties...........{}
+2023-05-12 12:34:19,006 DEBUG c.z.h.HikariConfig [main] healthCheckRegistry.............none
+2023-05-12 12:34:19,006 DEBUG c.z.h.HikariConfig [main] idleTimeout.....................600000
+2023-05-12 12:34:19,006 DEBUG c.z.h.HikariConfig [main] initializationFailTimeout.......1
+2023-05-12 12:34:19,006 DEBUG c.z.h.HikariConfig [main] isolateInternalQueries..........false
+2023-05-12 12:34:19,006 DEBUG c.z.h.HikariConfig [main] jdbcUrl.........................jdbc:mysql://localhost:3306/carsapidb
+2023-05-12 12:34:19,006 DEBUG c.z.h.HikariConfig [main] keepaliveTime...................0
+2023-05-12 12:34:19,006 DEBUG c.z.h.HikariConfig [main] leakDetectionThreshold..........0
+2023-05-12 12:34:19,006 DEBUG c.z.h.HikariConfig [main] maxLifetime.....................1800000
+2023-05-12 12:34:19,006 DEBUG c.z.h.HikariConfig [main] maximumPoolSize.................10
+2023-05-12 12:34:19,006 DEBUG c.z.h.HikariConfig [main] metricRegistry..................none
+2023-05-12 12:34:19,006 DEBUG c.z.h.HikariConfig [main] metricsTrackerFactory...........none
+2023-05-12 12:34:19,022 DEBUG c.z.h.HikariConfig [main] minimumIdle.....................10
+2023-05-12 12:34:19,022 DEBUG c.z.h.HikariConfig [main] password........................<masked>
+2023-05-12 12:34:19,022 DEBUG c.z.h.HikariConfig [main] poolName........................"HikariPool-1"
+2023-05-12 12:34:19,022 DEBUG c.z.h.HikariConfig [main] readOnly........................false
+2023-05-12 12:34:19,022 DEBUG c.z.h.HikariConfig [main] registerMbeans..................false
+2023-05-12 12:34:19,022 DEBUG c.z.h.HikariConfig [main] scheduledExecutor...............none
+2023-05-12 12:34:19,022 DEBUG c.z.h.HikariConfig [main] schema..........................none
+2023-05-12 12:34:19,022 DEBUG c.z.h.HikariConfig [main] threadFactory...................internal
+2023-05-12 12:34:19,022 DEBUG c.z.h.HikariConfig [main] transactionIsolation............default
+2023-05-12 12:34:19,022 DEBUG c.z.h.HikariConfig [main] username........................"root"
+2023-05-12 12:34:19,022 DEBUG c.z.h.HikariConfig [main] validationTimeout...............5000
+2023-05-12 12:34:19,022 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-05-12 12:34:19,307 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1e734eee
+2023-05-12 12:34:19,323 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-05-12 12:34:19,407 INFO o.h.e.j.d.i.DialectFactoryImpl [main] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-05-12 12:34:19,439 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=1, active=0, idle=1, waiting=0)
+2023-05-12 12:34:19,445 DEBUG c.z.h.p.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@374fd2c1
+2023-05-12 12:34:19,461 DEBUG c.z.h.p.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7672d8fa
+2023-05-12 12:34:19,476 DEBUG c.z.h.p.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@474eab4f
+2023-05-12 12:34:19,492 DEBUG c.z.h.p.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@165d27b5
+2023-05-12 12:34:19,545 DEBUG c.z.h.p.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5f923c0a
+2023-05-12 12:34:19,571 DEBUG c.z.h.p.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1213dd41
+2023-05-12 12:34:19,586 DEBUG c.z.h.p.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@166b9906
+2023-05-12 12:34:19,606 DEBUG c.z.h.p.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3852e4b6
+2023-05-12 12:34:19,622 DEBUG c.z.h.p.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1dfce50e
+2023-05-12 12:34:19,641 DEBUG c.z.h.p.HikariPool [HikariPool-1 connection adder] HikariPool-1 - After adding stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:34:21,550 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-12 12:34:21,813 DEBUG o.s.w.s.h.AbstractHandlerMethodMapping [main] 
+	c.s.c.c.AlquilerController:
+	{PUT [/alquileres/{id}]}: modificarAlquiler(long,Alquiler)
+	{GET [/alquileres]}: getAlquiler()
+	{GET [/alquiler/{id}]}: getAlquiler(long)
+	{POST [/alquiler]}: addRent(AlquilerDTO)
+	{DELETE [/alquileres/{id}]}: eliminarAlquiler(long)
+2023-05-12 12:34:21,813 DEBUG o.s.w.s.h.AbstractHandlerMethodMapping [main] 
+	c.s.c.c.CiudadController:
+	{DELETE [/ciudades/{id}]}: eliminarCiudad(long)
+	{POST [/ciudades]}: añadirCiudad(Ciudad)
+	{PUT [/ciudades/{id}]}: modificarCiudad(long,Ciudad)
+	{GET [/ciudad/{id}]}: getCiudad(long)
+	{GET [/ciudades]}: getCiudades()
+2023-05-12 12:34:21,813 DEBUG o.s.w.s.h.AbstractHandlerMethodMapping [main] 
+	c.s.c.c.CocheController:
+	{PUT [/coches/{id}]}: modificarCoche(long,Coche)
+	{POST [/coches]}: añadirCoche(Coche)
+	{DELETE [/coches/{id}]}: eliminarCoche(long)
+	{GET [/coches]}: getCoches()
+	{GET [/coche/{id}]}: getCoche(long)
+2023-05-12 12:34:21,813 DEBUG o.s.w.s.h.AbstractHandlerMethodMapping [main] 
+	c.s.c.c.OficinaController:
+	{DELETE [/oficinas/{id}]}: eliminarOficina(long)
+	{PUT [/oficinas/{id}]}: modificarOficina(long,Oficina)
+	{GET [/oficinas]}: getOficina(String)
+	{GET [/oficina/{id}]}: getOficina(long)
+	{POST [/oficina]}: addOffice(OficinaDTO)
+2023-05-12 12:34:21,829 DEBUG o.s.w.s.h.AbstractHandlerMethodMapping [main] 
+	c.s.c.c.UsuarioController:
+	{GET [/usuarios]}: getUsuarios()
+	{DELETE [/usuarios/{id}]}: eliminarUsuario(long)
+	{POST [/usuarios]}: añadirUsuario(Usuario)
+	{PUT [/usuarios/{id}]}: modificarUsuario(long,Usuario)
+	{GET [/usuario/dni/{dni}]}: getUsuarioByDni(String)
+	{GET [/usuario/{id}]}: getUsuario(long)
+2023-05-12 12:34:21,829 DEBUG o.s.w.s.h.AbstractHandlerMethodMapping [main] 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2023-05-12 12:34:21,850 DEBUG o.s.w.s.h.AbstractDetectingUrlHandlerMapping [main] 'beanNameHandlerMapping' {}
+2023-05-12 12:34:21,866 DEBUG o.s.w.s.h.SimpleUrlHandlerMapping [main] 'resourceHandlerMapping' {/webjars/**=ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]], /**=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]}
+2023-05-12 12:34:22,098 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2023-05-12 12:34:22,144 INFO o.s.b.StartupInfoLogger [main] Started CarsApiApplication in 8.942 seconds (process running for 10.644)
+2023-05-12 12:34:25,238 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-12 12:34:25,308 INFO c.s.c.c.AlquilerController [http-nio-8080-exec-2] Obtener lista de alquileres registrados
+2023-05-12 12:34:29,652 INFO c.s.c.c.AlquilerController [http-nio-8080-exec-3] Inicio addRentAlquilerDTO(fechaInicio=2021-10-09, fechaFin=2021-10-20, coche=1, usuario=3)
+2023-05-12 12:34:29,714 INFO c.s.c.s.AlquilerServiceImp [http-nio-8080-exec-3] Inicio addRent computers
+2023-05-12 12:34:29,831 INFO c.s.c.c.AlquilerController [http-nio-8080-exec-3] Final addRent
+2023-05-12 12:34:49,440 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:34:49,440 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:35:19,446 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:35:19,446 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:35:41,107 INFO c.s.c.c.OficinaController [http-nio-8080-exec-5] filtrar oficinas por ciudad
+2023-05-12 12:35:41,124 INFO c.s.c.c.OficinaController [http-nio-8080-exec-5] En caso de que no existan oficinas en la ciudad buscada se muestra un array vacio
+2023-05-12 12:35:49,458 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:35:49,458 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:36:19,473 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:36:19,473 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:36:49,486 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:36:49,486 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:37:19,490 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:37:19,490 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:37:49,503 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:37:49,503 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:37:57,764 INFO c.s.c.c.OficinaController [http-nio-8080-exec-9] Inicio addOfficeOficinaDTO(numTrabajadores=12, direccion=C/ Luz, nombre=Oficina PEPE, telefono=973453312, email=pepeoficce@gmail.es, ciudad=2)
+2023-05-12 12:37:57,766 INFO c.s.c.s.OficinaServiceImp [http-nio-8080-exec-9] Inicio addOffice
+2023-05-12 12:37:57,808 INFO c.s.c.c.OficinaController [http-nio-8080-exec-9] Final addOffice
+2023-05-12 12:38:11,631 INFO c.s.c.c.OficinaController [http-nio-8080-exec-10] filtrar oficinas por ciudad
+2023-05-12 12:38:11,642 INFO c.s.c.c.OficinaController [http-nio-8080-exec-10] En caso de que no existan oficinas en la ciudad buscada se muestra un array vacio
+2023-05-12 12:38:19,516 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:38:19,516 DEBUG c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2023-05-12 12:38:33,405 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-05-12 12:38:33,405 DEBUG c.z.h.p.HikariPool [SpringApplicationShutdownHook] HikariPool-1 - Before shutdown stats (total=10, active=0, idle=10, waiting=0)
+2023-05-12 12:38:33,420 DEBUG c.z.h.p.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@1e734eee: (connection evicted)
+2023-05-12 12:38:33,436 DEBUG c.z.h.p.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@374fd2c1: (connection evicted)
+2023-05-12 12:38:33,436 DEBUG c.z.h.p.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@7672d8fa: (connection evicted)
+2023-05-12 12:38:33,436 DEBUG c.z.h.p.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@474eab4f: (connection evicted)
+2023-05-12 12:38:33,436 DEBUG c.z.h.p.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@165d27b5: (connection evicted)
+2023-05-12 12:38:33,436 DEBUG c.z.h.p.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@5f923c0a: (connection evicted)
+2023-05-12 12:38:33,436 DEBUG c.z.h.p.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@1213dd41: (connection evicted)
+2023-05-12 12:38:33,436 DEBUG c.z.h.p.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@166b9906: (connection evicted)
+2023-05-12 12:38:33,436 DEBUG c.z.h.p.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@3852e4b6: (connection evicted)
+2023-05-12 12:38:33,436 DEBUG c.z.h.p.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@1dfce50e: (connection evicted)
+2023-05-12 12:38:33,436 DEBUG c.z.h.p.HikariPool [SpringApplicationShutdownHook] HikariPool-1 - After shutdown stats (total=0, active=0, idle=0, waiting=0)
+2023-05-12 12:38:33,436 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
