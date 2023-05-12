@@ -34,7 +34,7 @@ public class CocheController {
 
     }
 
-    @GetMapping("/coche/{id}")
+    @GetMapping("/coches/{id}")
     public ResponseEntity<Coche> getCoche(@PathVariable long id) throws CocheNotFoundException {
         Coche coche = cocheService.buscarPorId(id);
         logger.info("Obteniendo coche por Id");

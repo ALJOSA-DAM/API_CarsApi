@@ -13,7 +13,7 @@ import org.hibernate.annotations.OnDeleteAction;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "oficina")
+@Entity(name = "oficinas")
 public class Oficina {
 
     @Id

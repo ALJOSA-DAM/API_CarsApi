@@ -13,7 +13,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "Ciudad")
+@Entity(name = "ciudades")
 public class Ciudad {
 
     @Id
