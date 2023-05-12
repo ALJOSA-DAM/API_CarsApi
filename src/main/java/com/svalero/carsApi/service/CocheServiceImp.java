@@ -9,14 +9,19 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class CocheServiceImp implements CocheService{
+public class CocheServiceImp implements CocheService {
 
     @Autowired
     private CocheRepository cocheRepository;
+
     @Override
     public List<Coche> listar() {
-
         return cocheRepository.findAll();
+    }
+
+    @Override
+    public List<Coche> listar(String brand, String model, String license) {
+        return cocheRepository.findByMarcaContainingOrModeloContainingOrMatriculaContaining(brand, model, license);
     }
 
     @Override
@@ -34,7 +39,7 @@ public class CocheServiceImp implements CocheService{
 
 
     @Override
-    public void eliminarCoche(long id) throws CocheNotFoundException{
+    public void eliminarCoche(long id) throws CocheNotFoundException {
         Coche coche = cocheRepository.findById(id)
                 .orElseThrow(CocheNotFoundException::new);
 

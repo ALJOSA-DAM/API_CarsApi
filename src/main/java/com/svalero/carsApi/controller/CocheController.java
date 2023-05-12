@@ -28,9 +28,21 @@ public class CocheController {
     private final Logger logger = LoggerFactory.getLogger(CocheController.class);
 
     @GetMapping("/coches")
-    public ResponseEntity<List<Coche>> getCoches(){
+    public ResponseEntity<List<Coche>> getCoches(@Valid @RequestParam(name = "marca", required = false) String brand,
+                                                 @Valid @RequestParam(name = "modelo", required = false) String model,
+                                                 @Valid @RequestParam(name = "matricula", required = false) String license,
+                                                 @Valid @RequestParam(name = "all", defaultValue = "false") boolean all) {
         logger.info("llamada al método listar coches");
-        return ResponseEntity.ok(cocheService.listar());
+        List<Coche> coches;
+        if (all) {
+            logger.info("Mostrado de todos los coches");
+            coches = cocheService.listar();
+        } else {
+            logger.info("Filtrado por brand, model, license");
+            coches = cocheService.listar(brand, model, license);
+        }
+        logger.info("Fin getBikes");
+        return ResponseEntity.ok(coches);
 
     }
 
@@ -43,9 +55,8 @@ public class CocheController {
     }
 
 
-
     @PostMapping("/coches")
-    public ResponseEntity<Coche> añadirCoche(@Valid @RequestBody Coche coche){
+    public ResponseEntity<Coche> añadirCoche(@Valid @RequestBody Coche coche) {
         Coche newCoche = cocheService.añadirCoche(coche);
         logger.info("Añadiendo un nuevo coche");
         return ResponseEntity.status(HttpStatus.CREATED).body(newCoche);
@@ -53,7 +64,7 @@ public class CocheController {
     }
 
     @DeleteMapping("/coches/{id}")
-    public ResponseEntity<Void> eliminarCoche(@PathVariable long id)throws CocheNotFoundException{
+    public ResponseEntity<Void> eliminarCoche(@PathVariable long id) throws CocheNotFoundException {
         cocheService.eliminarCoche(id);
         logger.info("eliminando un coche");
         return ResponseEntity.noContent().build();
@@ -61,27 +72,29 @@ public class CocheController {
     }
 
     @PutMapping("/coches/{id}")
-    public ResponseEntity<Coche> modificarCoche(@PathVariable long id, @RequestBody Coche coche) throws CocheNotFoundException{
-            Coche newCoche = cocheService.modificarCoche(id,coche);
-            logger.info("obtenido un Id del coche a modificar");
-            return ResponseEntity.status(HttpStatus.OK).body(newCoche);
+    public ResponseEntity<Coche> modificarCoche(@PathVariable long id, @RequestBody Coche coche) throws CocheNotFoundException {
+        Coche newCoche = cocheService.modificarCoche(id, coche);
+        logger.info("obtenido un Id del coche a modificar");
+        return ResponseEntity.status(HttpStatus.OK).body(newCoche);
 
     }
+
     @ExceptionHandler(CocheNotFoundException.class)
-    public ResponseEntity<MensajeError> cocheNotFoundException(CocheNotFoundException cnfe){
+    public ResponseEntity<MensajeError> cocheNotFoundException(CocheNotFoundException cnfe) {
         logger.error(cnfe.getMessage(), cnfe);
-        MensajeError mensajeError = new MensajeError(404,cnfe.getMessage());
+        MensajeError mensajeError = new MensajeError(404, cnfe.getMessage());
         return new ResponseEntity(mensajeError, HttpStatus.NOT_FOUND);
     }
+
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<MensajeError> handleException(Exception e){
-        logger.error(e.getMessage(),e);
-        MensajeError mensajeError = new MensajeError(500,"Internal server Error");
+    public ResponseEntity<MensajeError> handleException(Exception e) {
+        logger.error(e.getMessage(), e);
+        MensajeError mensajeError = new MensajeError(500, "Internal server Error");
         return new ResponseEntity(mensajeError, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<MensajeError> handleBadRequestException(MethodArgumentNotValidException manve){
+    public ResponseEntity<MensajeError> handleBadRequestException(MethodArgumentNotValidException manve) {
         Map<String, String> errors = new HashMap<>();
         manve.getBindingResult().getAllErrors().forEach(error -> {
             String fieldName = ((FieldError) error).getField();
