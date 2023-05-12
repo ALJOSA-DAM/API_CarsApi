@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "6d7a264a-447c-4cd9-8ee4-e06f7f1d4d33",
+		"_postman_id": "15cc2b76-cf26-458d-be20-094708d84a99",
 		"name": "CarsApi",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18150094"
 	},
 	"item": [
 		{
@@ -33,14 +34,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/coche/1",
+							"raw": "http://localhost:8080/coches/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"coche",
+								"coches",
 								"1"
 							]
 						}
@@ -145,14 +146,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/usuario/1",
+							"raw": "http://localhost:8080/usuarios/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"usuario",
+								"usuarios",
 								"1"
 							]
 						}
@@ -165,14 +166,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/usuario/dni/38576849J",
+							"raw": "http://localhost:8080/usuarios/dni/38576849J",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"usuario",
+								"usuarios",
 								"dni",
 								"38576849J"
 							]
@@ -231,10 +232,19 @@
 				{
 					"name": "Modificar Usuario",
 					"request": {
-						"method": "GET",
+						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "http://localhost:8080/usuarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuarios",
+								"1"
+							]
 						}
 					},
 					"response": []
@@ -278,14 +288,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/alquiler",
+							"raw": "http://localhost:8080/alquileres",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"alquiler"
+								"alquileres"
 							]
 						}
 					},
@@ -317,14 +327,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/usuarios/3",
+							"raw": "http://localhost:8080/alquileres/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"usuarios",
+								"alquileres",
 								"3"
 							]
 						}
@@ -422,14 +432,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/oficina",
+							"raw": "http://localhost:8080/oficinas",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"oficina"
+								"oficinas"
 							]
 						}
 					},

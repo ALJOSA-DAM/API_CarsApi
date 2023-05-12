@@ -32,14 +32,14 @@ public class UsuarioController {
         return ResponseEntity.ok(usuarioService.listar());
     }
 
-    @GetMapping("/usuario/{id}")
+    @GetMapping("/usuarios/{id}")
     public ResponseEntity<Usuario> getUsuario(@PathVariable long id) throws UsuarioNotFoundException {
         Usuario usuario = usuarioService.buscarPorId(id);
         logger.info("buscar usuario por id");
         return ResponseEntity.ok(usuario);
     }   // mvn clean spring-boot:start
 
-    @GetMapping("/usuario/dni/{dni}")
+    @GetMapping("/usuarios/dni/{dni}")
     public ResponseEntity<Usuario> getUsuarioByDni(@PathVariable String dni) throws UsuarioNotFoundException {
         Usuario usuario = usuarioService.buscarPorDni(dni);
         logger.info("buscar usuario por dni: " + dni);
