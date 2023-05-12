@@ -8,10 +8,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface AlquilerRepository extends CrudRepository <Alquiler, Long>{
+public interface AlquilerRepository extends CrudRepository<Alquiler, Long> {
 
-    List <Alquiler> findAll();
-
-
+    List<Alquiler> findAll();
 
 }
