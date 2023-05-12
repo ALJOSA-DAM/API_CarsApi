@@ -13,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Entity(name = "coche")
+@Entity(name = "coches")
 public class Coche {
 
     @Id

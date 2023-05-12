@@ -43,14 +43,14 @@ public class OficinaController {
         return oficinas;
     }
 
-    @GetMapping("/oficina/{id}")
+    @GetMapping("/oficinas/{id}")
     public ResponseEntity<Oficina> getOficina(@PathVariable long id) throws OficinaNotFoundException {
         Oficina oficina = oficinaService.buscarPorId(id);
         logger.info("listar oficinas por id");
         return ResponseEntity.ok(oficina);
     }
 
-    @PostMapping("/oficina")
+    @PostMapping("/oficinas")
     public ResponseEntity<Oficina> addOffice(@Valid @RequestBody OficinaDTO oficinaDTO) throws CiudadNotFoundException, OficinaNotFoundException {
         logger.info("Inicio addOffice" + oficinaDTO.toString());
         Oficina newOficina = oficinaService.addOffice(oficinaDTO);
