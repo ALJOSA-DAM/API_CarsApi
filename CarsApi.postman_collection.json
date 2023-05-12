@@ -1,9 +1,8 @@
 {
 	"info": {
-		"_postman_id": "27a14c26-a965-4c14-82b5-01c4e262a8d4",
+		"_postman_id": "6d7a264a-447c-4cd9-8ee4-e06f7f1d4d33",
 		"name": "CarsApi",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "18150094"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -161,6 +160,27 @@
 					"response": []
 				},
 				{
+					"name": "Buscar Usuario por DNI",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/usuario/dni/38576849J",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuario",
+								"dni",
+								"38576849J"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Añadir Usuario",
 					"request": {
 						"method": "POST",
@@ -230,7 +250,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "http://localhost:8080/alquileres",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"alquileres"
+							]
 						}
 					},
 					"response": []
@@ -242,7 +270,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"fechaInicio\" : \"09-10-2021\",\r\n    \"fechaFin\" : \"20-10-2021\"\r\n    \r\n    \r\n\r\n}",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"fechaInicio\" : \"09-10-2021\",\r\n    \"fechaFin\" : \"20-10-2021\",\r\n    \"coche\" : 1,\r\n    \"usuario\" : 3\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -250,18 +278,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/usuario/2/coche/34/alquileres",
+							"raw": "http://localhost:8080/alquiler",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "8080",
 							"path": [
-								"usuario",
-								"2",
-								"coche",
-								"34",
-								"alquileres"
+								"alquiler"
 							]
 						}
 					},
@@ -370,12 +394,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/oficinas",
+							"raw": "http://localhost:8080/oficinas",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "8080",
 							"path": [
 								"oficinas"
 							]
@@ -390,7 +414,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"numTrabajadores\" : 5,\r\n    \"direccion\" : \"Calle Camelias, 3\",\r\n    \"telefono\": \"123456789\",\r\n    \"ciudad-oficina\" : 1\r\n}",
+							"raw": " {\r\n    \"id\": 2,\r\n    \"numTrabajadores\": 12,\r\n    \"direccion\": \"C/ Luz\",\r\n    \"nombre\": \"Oficina PEPE\",\r\n    \"telefono\": \"973453312\",\r\n    \"email\": \"pepeoficce@gmail.es\",\r\n    \"ciudad\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -398,15 +422,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/ciudad/1/oficina",
+							"raw": "http://localhost:8080/oficina",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "8080",
 							"path": [
-								"ciudad",
-								"1",
 								"oficina"
 							]
 						}
