@@ -1,5 +1,6 @@
 package com.svalero.carsApi.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -14,11 +15,11 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity (name = "usuario")
+@Entity(name = "usuario")
 public class Usuario {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column
     @NotBlank(message = "este dato no puede quedar en blanco")
@@ -30,10 +31,11 @@ public class Usuario {
     private String nombre;
     @Column
     private String apellidos;
-    @Column (name = "fecha_nacimiento")
+    @Column(name = "fecha_nacimiento")
     @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate fechaNacimiento;
-
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "usuario")
+    @JsonBackReference(value = "usuario-alquiler")
     private List<Alquiler> alquileres;
+
 }
