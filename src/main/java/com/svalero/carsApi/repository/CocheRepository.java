@@ -8,9 +8,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface CocheRepository extends CrudRepository <Coche, Long> {
+public interface CocheRepository extends CrudRepository<Coche, Long> {
 
-    List <Coche> findAll();
+    List<Coche> findAll();
 
+    List<Coche> findByMarcaContainingOrModeloContainingOrMatriculaContaining(String brand, String model, String license);
 
 }
