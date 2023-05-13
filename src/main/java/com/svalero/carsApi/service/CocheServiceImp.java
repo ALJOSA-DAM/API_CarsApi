@@ -33,7 +33,6 @@ public class CocheServiceImp implements CocheService {
 
     @Override
     public Coche añadirCoche(Coche coche) {
-
         return cocheRepository.save(coche);
     }
 
@@ -53,6 +52,7 @@ public class CocheServiceImp implements CocheService {
         Coche coche = cocheRepository.findById(id)
                 .orElseThrow();
         coche.setMarca(newCoche.getMarca());
+        coche.setModelo(newCoche.getModelo());
         coche.setMatricula(newCoche.getMatricula());
         coche.setDisponible(newCoche.isDisponible());
 
