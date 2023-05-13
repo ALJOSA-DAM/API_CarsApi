@@ -15,7 +15,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "usuario")
+@Entity(name = "usuarios")
 public class Usuario {
 
     @Id

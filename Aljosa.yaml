@@ -1,0 +1,814 @@
+openapi: "3.0.3"
+servers:
+  - url: https://localhost:8080
+info:
+  version: "1.0.0"
+  title: "ALJOSA_API"
+  description: Api para gestionar la una empresa de car Rental
+
+tags:
+  - name: Coches
+    description: Operaciones con coches.
+  - name: Usuarios
+    description: Operaciones con usuarios.
+  - name: Alquileres
+    description: Operaciones con alquileres.
+  - name: Ciudades
+    description: Operaciones con ciudades.
+  - name: Oficinas
+    description: Operaciones con oficinas.
+
+paths:
+  /oficinas:
+    get:
+      tags:
+        - Oficinas
+      summary: Lista de oficinas.
+      description: Muestra una lista de oficinas de una ciudad concreta.
+      operationId: getOficinas
+      parameters:
+        - name: ciudad-oficina
+          in: query
+          description: ciudad de las oficinas a buscar
+          required: false
+          schema:
+            type: string
+            example: "Zaragoza"
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Oficina"
+        '400':
+          description: Hay un error en la consulta, algún aspecto de la solicitud no es válido.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        404:
+          description: El recurso de destino no existe. La URI no está bien formada o se ha suprimido el recurso.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFound"
+        500:
+          description: Error interno del servidor.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalServerError"
+  /oficinas/{id}:
+    post:
+      tags:
+        - Oficinas
+      summary: Insertar una oficina
+      description: Añadir una nueva oficina en una ciudad a la base de datos.
+      operationId: addOficina
+      requestBody:
+        description: Crea una nueva oficina
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OficinaIn'
+      responses:
+        '201':
+          description: Se ha registrado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Oficina'
+        '400':
+          description: Hay un error en la consulta, algún aspecto de la solicitud no es válido.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestValidation'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    get:
+      tags:
+        - Oficinas
+      summary: Muestra una oficina
+      description: Muestra la información de una oficina determinada por su ID.
+      operationId: getCentro
+      parameters:
+        - name: id
+          in: path
+          description: Id de la oficina
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                  $ref: "#/components/schemas/Oficina"
+        '400':
+          description: Hay un error en la consulta, algún aspecto de la solicitud no es válido.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        404:
+          description: El recurso de destino no existe. La URI no está bien formado o se ha suprimido el recurso.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFound"
+        500:
+          description: Error interno del servidor.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalServerError"
+    delete:
+      tags:
+        - Oficinas
+      summary: Elimina una oficina
+      description: Elimina la información de una oficina determinado por su ID.
+      operationId: deleteOficina
+      parameters:
+        - name: id
+          in: path
+          description: Id de la oficina
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+      responses:
+        204:
+          description: No content
+        '400':
+          description: Hay un error en la consulta, algún aspecto de la solicitud no es válido.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        404:
+          description: El recurso de destino no existe. La URI no está bien formado o se ha suprimido el recurso.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFound"
+        500:
+          description: Error interno del servidor.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalServerError"
+    put:
+      tags:
+        - Oficinas
+      summary: Modificar una oficina
+      description: Modificar la infomación de una oficina en la base de datos.
+      operationId: modifyOficina
+      parameters:
+        - name: id
+          in: path
+          description: Id de la oficina
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+      requestBody:
+        description: Nuevos datos de la oficina
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Oficina'
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Oficina'
+        '400':
+          description: Hay un error en la consulta, algún aspecto de la solicitud no es válido.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestValidation'
+        404:
+          description: El recurso de destino no existe. La URI no está bien formado o se ha suprimido el recurso.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFound"
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+  /coches:
+    get:
+      tags:
+        - Coches
+      summary: Lista de coches.
+      description: Muestra una lista de coches.
+      operationId: getCoches
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Coche"
+        '400':
+          description: Hay un error en la consulta, algún aspecto de la solicitud no es válido.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        404:
+          description: El recurso de destino no existe. La URL no está bien formada o se ha suprimido el recurso.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFound"
+        500:
+          description: Error interno del servidor.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalServerError"
+  /coches/{id}:
+    post:
+      tags:
+        - Coches
+      summary: Insertar un coche
+      description: Añadir un nuevo coche a la base de datos.
+      operationId: addCoche
+      requestBody:
+        description: Crea un nuevo coche
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CocheIn'
+      responses:
+        '201':
+          description: Se ha registrado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Coche'
+        '400':
+          description: Hay un error en la consulta, algún aspecto de la solicitud no es válido.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestValidation'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    get:
+      tags:
+        - Coches
+      summary: Muestra un coche
+      description: Muestra la información de un coche determinad por su ID.
+      operationId: getCoche
+      parameters:
+        - name: id
+          in: path
+          description: Id del coche
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Coche"
+        '400':
+          description: Hay un error en la consulta, algún aspecto de la solicitud no es válido.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        404:
+          description: El recurso de destino no existe. La URI no está bien formado o se ha suprimido el recurso.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFound"
+        500:
+          description: Error interno del servidor.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalServerError"
+    delete:
+      tags:
+        - Coches
+      summary: Elimina un coche
+      description: Elimina la información de un coche determinado por su ID.
+      operationId: deleteCoche
+      parameters:
+        - name: id
+          in: path
+          description: Id del coche
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+      responses:
+        204:
+          description: No content
+        '400':
+          description: Hay un error en la consulta, algún aspecto de la solicitud no es válido.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        404:
+          description: El recurso de destino no existe. La URI no está bien formado o se ha suprimido el recurso.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFound"
+        500:
+          description: Error interno del servidor.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalServerError"
+    put:
+      tags:
+        - Coches
+      summary: Modificar un coche
+      description: Modificar la infomación de un coche en la base de datos.
+      operationId: modifyOficina
+      parameters:
+        - name: id
+          in: path
+          description: Id del coche
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+      requestBody:
+        description: Nuevos datos del coche
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Coche'
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Coche'
+        '400':
+          description: Hay un error en la consulta, algún aspecto de la solicitud no es válido.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestValidation'
+        404:
+          description: El recurso de destino no existe. La URI no está bien formado o se ha suprimido el recurso.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFound"
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+  /usuarios:
+    get:
+      tags:
+        - Usuarios
+      summary: Lista de usuarios.
+      description: Muestra una lista de usuarios.
+      operationId: getUsuarios
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Usuario"
+        '400':
+          description: Hay un error en la consulta, algún aspecto de la solicitud no es válido.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        404:
+          description: El recurso de destino no existe. La URL no está bien formada o se ha suprimido el recurso.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFound"
+        500:
+          description: Error interno del servidor.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalServerError"
+  /usuarios/{id}:
+    post:
+      tags:
+        - Usuarios
+      summary: Insertar un usuario
+      description: Añadir un nuevo usuario a la base de datos.
+      operationId: addUsuario
+      requestBody:
+        description: Crea un nuevo usuario
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UsuarioIn'
+      responses:
+        '201':
+          description: Se ha registrado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Usuario'
+        '400':
+          description: Hay un error en la consulta, algún aspecto de la solicitud no es válido.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestValidation'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    get:
+      tags:
+        - Usuarios
+      summary: Muestra un Usuario
+      description: Muestra la información de un usuario determinad por su ID.
+      operationId: getUsuario
+      parameters:
+        - name: id
+          in: path
+          description: Id del usuario
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Usuario"
+        '400':
+          description: Hay un error en la consulta, algún aspecto de la solicitud no es válido.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        404:
+          description: El recurso de destino no existe. La URI no está bien formado o se ha suprimido el recurso.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFound"
+        500:
+          description: Error interno del servidor.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalServerError"
+    delete:
+      tags:
+        - Usuarios
+      summary: Elimina un usuario
+      description: Elimina la información de un usuario determinado por su ID.
+      operationId: deleteUsuario
+      parameters:
+        - name: id
+          in: path
+          description: Id del usuario
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+      responses:
+        204:
+          description: No content
+        '400':
+          description: Hay un error en la consulta, algún aspecto de la solicitud no es válido.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        404:
+          description: El recurso de destino no existe. La URI no está bien formado o se ha suprimido el recurso.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFound"
+        500:
+          description: Error interno del servidor.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalServerError"
+    put:
+      tags:
+        - Usuarios
+      summary: Modificar un usuario
+      description: Modificar la infomación de un usuario en la base de datos.
+      operationId: modifyUsuario
+      parameters:
+        - name: id
+          in: path
+          description: Id del Usuario
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+      requestBody:
+        description: Nuevos datos del usuario
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Usuario'
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Usuario'
+        '400':
+          description: Hay un error en la consulta, algún aspecto de la solicitud no es válido.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestValidation'
+        404:
+          description: El recurso de destino no existe. La URI no está bien formado o se ha suprimido el recurso.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFound"
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+  /usuarios/dni/{dni}:
+    get:
+      tags:
+        - Usuarios
+      summary: Lista un usuario .
+      description: Muestra un usuario determinado por su DNI.
+      operationId: getUsuarioById
+      parameters:
+        - name: dni
+          in: path
+          description: Dni del usuario
+          schema:
+            type: string
+            example: "44091652P"
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Usuario"
+        '400':
+          description: Hay un error en la consulta, algún aspecto de la solicitud no es válido.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        404:
+          description: El recurso de destino no existe. La URL no está bien formada o se ha suprimido el recurso.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFound"
+        500:
+          description: Error interno del servidor.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalServerError"
+
+components:
+  schemas:
+    OficinaIn:
+      type: object
+      required:
+        - nombre
+        - direccion
+      properties:
+        nombre:
+          type: string
+          example: "Violeta"
+        direccion:
+          type: string
+          example: "Violeta Parra 56"
+        email:
+          type: string
+          example: "example.violeta@aljosa.com"
+        telefono:
+          type: string
+          example: "123456789"
+        ciudad:
+          $ref: "#/components/schemas/Ciudad"
+    Oficina:
+      type: object
+      properties:
+        id:
+          type: number
+          format: int64
+          example: 1
+      allOf:
+        - $ref: "#/components/schemas/OficinaIn"
+
+    CocheIn:
+      type: object
+      required:
+        - marca
+        - modelo
+      properties:
+        marca:
+          type: string
+          example: "Opel"
+        modelo:
+          type: string
+          example: "Corsa"
+        matricula:
+          type: string
+          example: "0344JFW"
+        disponible:
+          type: Boolean
+          example: "true"
+    Coche:
+      type: object
+      properties:
+        id:
+          type: number
+          format: int64
+          example: 1
+      allOf:
+        - $ref: "#/components/schemas/CocheIn"
+
+    UsuarioIn:
+      type: object
+      required:
+        - nombre
+        - dni
+      properties:
+        nombre:
+          type: string
+          example: "Alberto"
+        dni:
+          type: string
+          example: "44091652P"
+        apellidos:
+          type: string
+          example: "Alberto Rodriguez Taboada"
+        fecha nacimiento:
+          type: string
+          format: date
+          example: "26-09-1988"
+    Usuario:
+      type: object
+      properties:
+        id:
+          type: number
+          format: int64
+          example: 1
+      allOf:
+        - $ref: "#/components/schemas/UsuarioIn"
+
+
+    CiudadIn:
+      required:
+        - nombre
+        - provincia
+      properties:
+        nombre:
+          type: string
+          example: "Vigo"
+        Provincia:
+          type: string
+          example: "Pontevedra"
+    Ciudad:
+      type: object
+      allOf:
+        - $ref: "#/components/schemas/CiudadIn"
+      properties:
+        id:
+          type: number
+          format: int64
+          example: 1
+
+    BadRequest:
+      type: object
+      properties:
+        code:
+          type: string
+          description: código de estado
+          example: 400
+        message:
+          type: string
+          description: Bad Request
+          example: Bad Request
+    BadRequestValidation:
+      type: object
+      properties:
+        code:
+          type: string
+          description: código de estado
+          example: 400
+        message:
+          type: string
+          description: Mensaje de error
+          example: Error de validación
+        errors:
+          $ref: '#/components/schemas/ErrorField'
+    ErrorField:
+      type: object
+      description: Error de validación en un campo de entrada
+      properties:
+        fieldName:
+          type: string
+          description: El campo donde se ha producido el error
+          example: dni
+        message:
+          type: string
+          description: Mensaje de error asociado con el campo
+          example: El formato introducido no es correcto introduce un dni válido
+    NotFound:
+      type: object
+      properties:
+        code:
+          type: string
+          description: código de estado
+          example: 404
+        message:
+          type: string
+          description: Mensaje de error
+          example: Recurso solicitado no encontrado
+    ErrorResponse:
+      properties:
+        internalError:
+          type: number
+          format: int32
+        message:
+          type: string
+      type: object
+    InternalServerError:
+      allOf:
+        - type: object
+        - $ref: '#/components/schemas/ErrorResponse'
+      example:
+        internalError: 500
+        message: "Error interno del servidor"
