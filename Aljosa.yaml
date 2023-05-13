@@ -61,7 +61,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/InternalServerError"
-  /oficinas/{id}:
     post:
       tags:
         - Oficinas
@@ -94,6 +93,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerError'
+  /oficinas/{id}:
     get:
       tags:
         - Oficinas
@@ -191,7 +191,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Oficina'
+              $ref: '#/components/schemas/OficinaIn'
       responses:
         '200':
           description: Ok
@@ -224,6 +224,44 @@ paths:
       summary: Lista de coches.
       description: Muestra una lista de coches.
       operationId: getCoches
+      parameters:
+        - name: brand
+          in: query
+          description: Marca del coche
+          required: false
+          schema:
+            type: string
+          example:
+            value: opel
+        - name: model
+          in: query
+          description: Modelo del coche
+          required: false
+          schema:
+            type: string
+          example:
+              value: opel
+        - name: Brand
+          in: query
+          description: Marticula del coche
+          required: false
+          schema:
+            type: string
+          example:
+            value: opel
+        - name: all
+          in: query
+          description: devuelve todos los coches
+          required: false
+          schema:
+            type: boolean
+            default: false
+          example:
+            Ejemplo 1:
+              value: false
+            Ejemplo 2: 
+              value: true  
+
       responses:
         200:
           description: ok
@@ -251,7 +289,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/InternalServerError"
-  /coches/{id}:
     post:
       tags:
         - Coches
@@ -284,6 +321,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerError'
+  /coches/{id}:
     get:
       tags:
         - Coches
@@ -365,7 +403,7 @@ paths:
         - Coches
       summary: Modificar un coche
       description: Modificar la infomación de un coche en la base de datos.
-      operationId: modifyOficina
+      operationId: modifyCoche
       parameters:
         - name: id
           in: path
@@ -381,7 +419,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Coche'
+              $ref: '#/components/schemas/CocheIn'
       responses:
         '200':
           description: Ok
@@ -441,7 +479,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/InternalServerError"
-  /usuarios/{id}:
     post:
       tags:
         - Usuarios
@@ -474,6 +511,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerError'
+  /usuarios/{id}:  
     get:
       tags:
         - Usuarios
@@ -571,7 +609,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Usuario'
+              $ref: '#/components/schemas/UsuarioIn'
       responses:
         '200':
           description: Ok
@@ -608,6 +646,7 @@ paths:
         - name: dni
           in: path
           description: Dni del usuario
+          required: true
           schema:
             type: string
             example: "44091652P"
@@ -638,9 +677,222 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/InternalServerError"
+  /alquileres:
+    get:
+      tags:
+        - Alquileres
+      summary: Lista de alquileres
+      description: Muestra una lista de los alquileres
+      operationId: getAlquileres
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Alquiler"
+        '400':
+          description: Hay un error en la consulta, algún aspecto de la solicitud no es válido.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        404:
+          description: El recurso de destino no existe. La URL no está bien formada o se ha suprimido el recurso.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFound"
+        500:
+          description: Error interno del servidor.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalServerError"
+    post:
+      tags:
+        - Alquileres
+      summary: Insertar un alquiler
+      description: Añadir un nuevo alquiler a la base de datos.
+      operationId: addRent
+      requestBody:
+        description: Crea un nuevo alquiler
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AlquilerIn'
+      responses:
+        '201':
+          description: Se ha registrado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Alquiler'
+        '400':
+          description: Hay un error en la consulta, algún aspecto de la solicitud no es válido.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestValidation'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+  /alquileres/{id}:
+    get:
+      tags:
+        - Alquileres
+      summary: Muestra un alquiler
+      description: Muestra la información de un alquiler determinado por su ID.
+      operationId: getAlquiler
+      parameters:
+        - name: id
+          in: path
+          description: Id del alquiler
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Alquiler"
+        '400':
+          description: Hay un error en la consulta, algún aspecto de la solicitud no es válido.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        404:
+          description: El recurso de destino no existe. La URI no está bien formado o se ha suprimido el recurso.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFound"
+        500:
+          description: Error interno del servidor.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalServerError"
+    delete:
+      tags:
+        - Alquileres
+      summary: Elimina un alquiler
+      description: Elimina la información de un alquiler determinado por su ID.
+      operationId: deleteAlquiler
+      parameters:
+        - name: id
+          in: path
+          description: Id del alquiler
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+      responses:
+        204:
+          description: No content
+        '400':
+          description: Hay un error en la consulta, algún aspecto de la solicitud no es válido.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        404:
+          description: El recurso de destino no existe. La URI no está bien formado o se ha suprimido el recurso.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFound"
+        500:
+          description: Error interno del servidor.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalServerError"
+    put:
+      tags:
+        - Alquileres
+      summary: Modificar un alquiler
+      description: Modificar la infomación de un alquiler en la base de datos.
+      operationId: modifyAlquiler
+      parameters:
+        - name: id
+          in: path
+          description: Id del alquiler
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+      requestBody:
+        description: Nuevos datos del alquiler
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AlquilerIn'
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Alquiler'
+        '400':
+          description: Hay un error en la consulta, algún aspecto de la solicitud no es válido.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestValidation'
+        404:
+          description: El recurso de destino no existe. La URI no está bien formado o se ha suprimido el recurso.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFound"
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
 
 components:
   schemas:
+    AlquilerIn:
+      type: object
+      properties:
+        fechaInicio:
+          type: string
+          format: date
+          example: "10-10-2022"
+        fechaFin:
+          type: string
+          format: date
+          example: "12-1-2023"
+        coche:
+            $ref: "#/components/schemas/Coche"
+        usuario:
+            $ref: "#/components/schemas/Usuario"
+    Alquiler:
+      properties:
+        id:
+          type: number
+          format: int64
+          example: 1
+      allOf:
+        - $ref: "#/components/schemas/AlquilerIn"
     OficinaIn:
       type: object
       required:
@@ -662,7 +914,6 @@ components:
         ciudad:
           $ref: "#/components/schemas/Ciudad"
     Oficina:
-      type: object
       properties:
         id:
           type: number
@@ -687,10 +938,9 @@ components:
           type: string
           example: "0344JFW"
         disponible:
-          type: Boolean
+          type: boolean
           example: "true"
     Coche:
-      type: object
       properties:
         id:
           type: number
@@ -719,7 +969,6 @@ components:
           format: date
           example: "26-09-1988"
     Usuario:
-      type: object
       properties:
         id:
           type: number
@@ -741,7 +990,6 @@ components:
           type: string
           example: "Pontevedra"
     Ciudad:
-      type: object
       allOf:
         - $ref: "#/components/schemas/CiudadIn"
       properties:

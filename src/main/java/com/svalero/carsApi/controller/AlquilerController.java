@@ -35,14 +35,14 @@ public class AlquilerController {
         return ResponseEntity.ok(alquilerService.listar());
     }
 
-    @GetMapping("/alquiler/{id}")
+    @GetMapping("/alquileres/{id}")
     public ResponseEntity<Alquiler> getAlquiler(@PathVariable long id) throws AlquilerNotFoundException {
         Alquiler alquiler = alquilerService.buscarPorId(id);
         logger.info("Alquiler filtrado por id");
         return ResponseEntity.ok(alquiler);
     }
 
-    @PostMapping("/alquiler")
+    @PostMapping("/alquileres")
     public ResponseEntity<Alquiler> addRent(@Valid @RequestBody AlquilerDTO alquilerDTO) throws CocheNotFoundException, UsuarioNotFoundException {
         logger.info("Inicio addRent" + alquilerDTO.toString());
         Alquiler newAlquiler = alquilerService.addRent(alquilerDTO);
